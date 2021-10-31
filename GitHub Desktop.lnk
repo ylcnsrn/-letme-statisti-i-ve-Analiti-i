@@ -1,0 +1,130 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# libraries
+library(tidyverse)
+library(ggplot2)
+library(mosaic)
+library(e1071)
+library(readxl)
+library(readxl)
+```{r}
+veri <- dataset_5
+
+View(dataset_5)
+```
+```{r}
+median(veri)  
+```
+returns.numbers <- as.numeric(as.vector(data))
+median(returns.numbers)
+type.convert(dataset_5)
+is.numeric(dataset_5)
+is.integer(dataset_5)
+list(dataset_5)
+is.character(dataset_5)
+is.complex(dataset_5)
+is.logical(dataset_5)
+is.data.frame(dataset_5)
+sapply(veri, class)
+veri$portakal <- as.numeric(as.character(veri$portakal))
+sapply(veri, class)
+```{r veri}
+**Ortalama (Mean)**
+mean(veri$portakal)
+**Medyan (Median)**
+  ```{r}
+median(veri$portakal)
+```
+```
+# Create the function.
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+# Create the vector with numbers.
+v <- c(veri$elma)
+# Calculate the mode using the user function.
+mod <- getmode(v)
+print(mod)
+```
+**Yüzde deðer (Percentile)**
+  ```{r}
+quantile(veri$portakal, c(.32, .57, .98))
+**Çeyrek deðer (Quartile)**
+  ```{r}
+quantile(veri$portakal)
+**Deðiþim aralýðý (Range)**
+  ```{r}
+range(veri$portakal)
+aralik <- max(veri$portakal) - min(veri$portakal)
+print(aralik)```
+**Çeyrekler arasý deðiþim aralýðý (Interquartile range)**
+  ```{r}
+IQR(veri$portakal)
+**Varyans (Variance)**
+  ```{r}
+var(veri$portakal)
+**Standart sapma (Standard deviation)**
+  ```{r echo=FALSE}
+sd(veri$portakal)
+**Deðiþkenlik katsayýsý (Coefficient of variation)**
+  ```{r}
+# Create the function.
+getdk <- function(d) {
+  k <- 100*(sd(d)/mean(d))
+}
+d <- c(veri$portakal)
+dk <- getdk(d)
+print(dk)
+``````
+**Çarpýklýk (Skewness)**
+  ```{r}
+skewness(veri$portakal)
+**z Deðeri (z-Value)**
+  ```{r}
+zscore(veri$portakal)
+```
+install.packages(c("R.basic"), contriburl="http://www.braju.com/R/repos/")
+library("R.basic")
+zscore(veri$portakal)
+zscore(veri$portakal, na.rm = getOption("na.rm", FALSE))
+scale(veri$portakal)
+**Frekans (Frequency)**
+  ```{r}
+hist(veri$portakal,plot = FALSE)
+hist(veri$portakal)
+**Stem-and-Leaf Plot**
+  ```{r}
+stem(veri$portakal)
+**Plot**
+  ```{r}
+plot(veri$portakal[1:100],ylim=c(0,200))
+abline(h = c(mean(veri$portakal),mean(veri$portakal)+sd(veri$portakal),mean(veri$portakal)-sd(veri$portakal),mean(veri$portakal)+2*sd(veri$portakal),mean(veri$portakal)-2*sd(veri$portakal)), col = c("red", "blue", "blue", "green", "green"))
+```
+**Box plot**
+  ```{r}
+boxplot(veri$portakal, horizontal=TRUE)
+
+**Kovaryans**
+  ```{r}
+cov(veri$elma,veri$portakal)```
+**Korelasyon Katsayýsý**
+  ```{r}
+cor(veri$elma,veri$portakal)
+```
+veri$elma <- as.numeric(as.character(veri$elma))
+sapply(veri, class)
+```
+**Kovaryans**
+  ```{r}
+cov(veri$elma,veri$portakal)```
+**Popülasyon**
+  ```{r}
+set.seed(1234)
+df <- data.frame(
+  agirlik=round(rnorm(1000, mean=110, sd=15))
+)
+summary(df)
+ggplot(df, aes(x=agirlik)) + geom_histogram(binwidth=10)
+```
+
